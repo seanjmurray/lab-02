@@ -42,6 +42,19 @@ li {
   list-style: square;
   text-align: left;
 }
+
+hr {
+  border: dotted 7.5px #00adb5;
+  border-style: dotted none none;
+  text-align: center;
+  width: 25%;
+}
+
+.card {
+  background-color: #111111;
+  padding: 25px;
+  border-radius: 20px;
+}
 /* Flex */
 
 .container {
@@ -52,7 +65,12 @@ li {
 
 .item {
   margin: auto;
-  width: 45%;
+  width: 40%;
+}
+
+.item-big {
+  margin: auto;
+  width: 100%;
 }
 /* Adds break for screen size */
 @media all and (max-width: 800px) {
@@ -60,4 +78,19 @@ li {
   width: 100%;
 }
 }
+/* button */
+button {
+  height: 50px;
+  width: 75%;
+  background-color: #00adb5;
+  color: #eeeeee;
+  border-style: none;
+  border-radius: 25px;
+  font-size: 2em;
+  margin: 10px;
+}
 
+button:hover {
+  background-color: #eeeeee;
+  color: #00adb5;
+}
