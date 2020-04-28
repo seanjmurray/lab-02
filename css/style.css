@@ -33,18 +33,15 @@ i:hover {
   color: #eeeeee;
 }
 
-.left {
-  float: left;
-}
-
-.right {
-  float: right;
-}
 .pic {
   border-radius: 10px;
   height: 300px;
 }
 
+li {
+  list-style: square;
+  text-align: left;
+}
 /* Flex */
 
 .container {
@@ -55,11 +52,12 @@ i:hover {
 
 .item {
   margin: auto;
-width: 50%;
+  width: 45%;
 }
-
+/* Adds break for screen size */
 @media all and (max-width: 800px) {
 .item {
   width: 100%;
 }
 }
+
