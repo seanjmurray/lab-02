@@ -1,3 +1,47 @@
-* {
-  font-family: 'Montserrat', sans-serif;
+/* GLOBAL STYLES */
+html {
+  background-color: #222222;
+  color: #eeeeee;
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
+  margin: 5% 10%;
+  text-align: center;
+}
+
+h1, h2, h3 {
+  color: #00adb5;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+.pic {
+  border-radius: 10px;
+  height: 200px;
+  width: auto;
+}
+
+/* Flex */
+
+.container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.item {
+
 }
