@@ -21,6 +21,18 @@ h2 {
   font-size: 2em;
 }
 
+h3 {
+  font-size: 1.5em;
+}
+
+i {
+  color: #00adb5;
+}
+
+i:hover {
+  color: #eeeeee;
+}
+
 .left {
   float: left;
 }
@@ -30,8 +42,7 @@ h2 {
 }
 .pic {
   border-radius: 10px;
-  height: 200px;
-  width: auto;
+  height: 300px;
 }
 
 /* Flex */
@@ -43,5 +54,12 @@ h2 {
 }
 
 .item {
+  margin: auto;
+width: 50%;
+}
 
+@media all and (max-width: 800px) {
+.item {
+  width: 100%;
+}
 }
