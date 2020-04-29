@@ -4,7 +4,6 @@ html {
   color: #eeeeee;
   font-family: Montserrat, sans-serif;
   font-weight: 400;
-  margin: 5% 10%;
   text-align: center;
 }
 
@@ -25,6 +24,46 @@ h3 {
   font-size: 1.5em;
 }
 
+/* Flex */
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.item {
+  margin: 3%;
+  flex-basis: auto;
+  width: 35%;
+}
+
+.item-big {
+  margin: auto;
+  width: 100%;
+}
+/* Adds break for screen size */
+@media all and (max-width: 800px) {
+.item {
+  width: 100%;
+}
+}
+
+/* header */
+header {
+  height: 25%;
+  margin: 15% 5%;
+}
+
+hr {
+  border: dotted 7.5px #00adb5;
+  border-style: dotted none none;
+  text-align: center;
+  width: 25%;
+}
+
+/* main */
 i {
   color: #00adb5;
 }
@@ -38,48 +77,22 @@ i:hover {
   height: 300px;
 }
 
-li {
+ul li {
   list-style: square;
   text-align: left;
 }
 
-hr {
-  border: dotted 7.5px #00adb5;
-  border-style: dotted none none;
-  text-align: center;
-  width: 25%;
+ol li {
+  list-style-type: decimal;
+  text-align: center; 
 }
-
 .card {
   background-color: #111111;
-  padding: 25px;
+  padding: 5%;
   border-radius: 20px;
   
 }
-/* Flex */
 
-.container {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-}
-
-.item {
-  margin: auto;
-  flex-basis: auto;
-  width: 40%;
-}
-
-.item-big {
-  margin: auto;
-  width: 100%;
-}
-/* Adds break for screen size */
-@media all and (max-width: 800px) {
-.item {
-  width: 100%;
-}
-}
 /* button */
 button {
   height: 50px;
@@ -89,7 +102,6 @@ button {
   border-style: none;
   border-radius: 25px;
   font-size: 2em;
-  margin: 10px;
 }
 
 button:hover {
