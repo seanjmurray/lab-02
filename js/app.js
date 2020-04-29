@@ -31,7 +31,7 @@ document.getElementById('clickMe').addEventListener('click', function(){
   }
   // question three
   var questionThree = prompt('Did your name suddenly appear on this site?');
-  if(questionThree[0].toLowerCase === 'y'){
+  if(questionThree[0].toLowerCase() === 'y'){
     correct();
   } else {
     alert('Are you sure you looked at this site? ' + score + '/5!');
@@ -51,5 +51,4 @@ document.getElementById('clickMe').addEventListener('click', function(){
   } else {
     alert('I\'m sorry you feel that way.' + score + '/5! Thank you for taking my quiz ' + userName + '!');
   }
-
 });
