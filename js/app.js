@@ -37,7 +37,7 @@ document.getElementById('clickMe').addEventListener('click', function(){
     alert('Are you sure you looked at this site? ' + score + '/5!');
   }
   // Question four
-  var questionFour = prompt('Do I like to rock climb?')
+  var questionFour = prompt('Do I like to rock climb?');
   if(questionFour[0].toLowerCase() === 'y'){
     correct();
   } else {
