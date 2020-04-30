@@ -12,79 +12,108 @@ document.getElementById('clickMe').addEventListener('click', function(){
   // runs correct alert and adds 1 to score
   // function correct(){
   //   score ++;
-  //   alert('Correct ' + score + '/6!');
+  //   alert('Correct ' + score + '/7!');
   // }
 
-  // Question one
-  var questionOne = prompt('Is my dog the cutest?');
-  if(questionOne[0].toLowerCase() === 'y'){
-    // correct();
-    score ++;
-    alert('Correct ' + score + '/6!');
-  } else {
-    alert('Unbelievable, ' + score + '/6');
-  }
-  // question two
-  var questionTwo = prompt('Do I have a red motorcycle?');
-  if(questionTwo[0].toLowerCase() === 'y'){
-    // correct();
-    score ++;
-    alert('Correct ' + score + '/6!');
-  } else {
-    alert('are you sure you were ready for this? ' + score + '/6');
-  }
-  // question three
-  var questionThree = prompt('Did your name suddenly appear on this site?');
-  if(questionThree[0].toLowerCase() === 'y'){
-    // correct();
-    score ++;
-    alert('Correct ' + score + '/6!');
-  } else {
-    alert('Are you sure you looked at this site? ' + score + '/6!');
-  }
-  // Question four
-  var questionFour = prompt('Do I like to rock climb?');
-  if(questionFour[0].toLowerCase() === 'y'){
-    // correct();
-    score ++;
-    alert('Correct ' + score + '/6!');
-  } else {
-    alert('Close, ' + score + '/6!');
-  }
-
-  // new question with Number
-  var myNumber = Math.random();
-  myNumber = myNumber * 10;
-  myNumber = Math.floor(myNumber);
-  var attemptsLeft = 4;
-  for(var i = 0; i < 5; i++) {
-    if(attemptsLeft > 0) {
-      var numberQuestion = prompt('You have ' + attemptsLeft + ' tries to guess my number, good luck!');
-      if(numberQuestion < myNumber){
-        attemptsLeft--;
-        alert('Too low try again');
-      }else if(numberQuestion > myNumber){
-        attemptsLeft--;
-        alert('Too high, ');
-      }else {
-        // correct();
-        score ++;
-        alert('Correct ' + score + '/7!');
-        break;
-      }
-    } else{
-      alert('Close the number was ' + myNumber + '.');
-    }
-  }
+  // // Question one
+  // var questionOne = prompt('Is my dog the cutest?');
+  // if(questionOne[0].toLowerCase() === 'y'){
+  //   // correct();
+  //   score ++;
+  //   alert('Correct ' + score + '/7!');
+  // } else {
+  //   alert('Unbelievable, ' + score + '/6');
+  // }
+  // // question two
+  // var questionTwo = prompt('Do I have a red motorcycle?');
+  // if(questionTwo[0].toLowerCase() === 'y'){
+  //   // correct();
+  //   score ++;
+  //   alert('Correct ' + score + '/7!');
+  // } else {
+  //   alert('are you sure you were ready for this? ' + score + '/7');
+  // }
+  // // question three
+  // var questionThree = prompt('Did your name suddenly appear on this site?');
+  // if(questionThree[0].toLowerCase() === 'y'){
+  //   // correct();
+  //   score ++;
+  //   alert('Correct ' + score + '/7!');
+  // } else {
+  //   alert('Are you sure you looked at this site? ' + score + '/7!');
+  // }
+  // // Question four
+  // var questionFour = prompt('Do I like to rock climb?');
+  // if(questionFour[0].toLowerCase() === 'y'){
+  //   // correct();
+  //   score ++;
+  //   alert('Correct ' + score + '/7!');
+  // } else {
+  //   alert('Close, ' + score + '/7!');
+  // }
+  // // new question with Number
+  // var myNumber = Math.random();
+  // myNumber = myNumber * 10;
+  // myNumber = Math.floor(myNumber);
+  // var attemptsLeft = 4;
+  // for(var i = 0; i < 5; i++) {
+  //   if(attemptsLeft > 0) {
+  //     var numberQuestion = prompt('You have ' + attemptsLeft + ' tries to guess my number, good luck!');
+  //     if(numberQuestion < myNumber){
+  //       attemptsLeft--;
+  //       alert('Too low');
+  //     }else if(numberQuestion > myNumber){
+  //       attemptsLeft--;
+  //       alert('Too high');
+  //     }else {
+  //       // correct();
+  //       score ++;
+  //       alert('Correct ' + score + '/7!');
+  //       break;
+  //     }
+  //   } else{
+  //     alert('Close the number was ' + myNumber + '.');
+  //   }
+  // }
   // new question with many answers
-  var manyAnswers = prompt('');
+  var attemptsLeft = 6;
 
-  // Question 
+  var optionBands = [' Red Hot Chilli Peppers', ' Thomas Rhett', ' Old Dominion', ' Kenny Chesney', ' Lil Dicky', ' Luke Combs', ' Chase Rice', ' Taylor Rae Holbrook', ' Kane Brown', ' Hoodie Allen'];
+
+  var favBands =['red hot chilli peppers', 'kenny chesney'];
+
+
+  if(attemptsLeft > 0){
+    for(var e = 0; e < 6; e++){
+      for(var i = 0; i < favBands.length; i++){
+        var manyAnswers = prompt('Can you guess my favorite band? You have ' + attemptsLeft +' tries! Here are your choices:' + optionBands + '.');
+        if(favBands[i] === manyAnswers.toLowerCase()){
+          score++;
+          alert('Correct ' + score + '/7!');
+          break;
+        }else {
+          attemptsLeft--;
+          alert('Try again');
+        }
+      }
+    }
+  }else{
+    alert('Almost, my favorite bands were ' + favBands[0] + favBands[1] + '.');
+  }
+
+
+
+
+
+
+
+
+  // Question
   var questionFive = prompt('Alright ' + userName + ', the final question. Is this a cool website?');
   if(questionFive[0].toLowerCase() === 'y'){
     score++;
-    alert('Thank you for taking my quiz ' + userName + ' you scored ' + score + '/5!');
+    alert('Thank you for taking my quiz ' + userName + ' you scored ' + score + '/7!');
   } else {
-    alert('I\'m sorry you feel that way.' + score + '/5! Thank you for taking my quiz ' + userName + '!');
+    alert('I\'m sorry you feel that way.' + score + '/7! Thank you for taking my quiz ' + userName + '!');
   }
 });
