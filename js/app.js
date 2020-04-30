@@ -77,7 +77,6 @@ document.getElementById('clickMe').addEventListener('click', function(){
   }
   // new question with many answers
   attemptsLeft = 6;
-  var notTrue = false;
   var optionBands = [' Red Hot Chilli Peppers', ' Thomas Rhett', ' Old Dominion', ' Kenny Chesney', ' Lil Dicky', ' Luke Combs', ' Chase Rice', ' Taylor Rae Holbrook', ' Kane Brown', ' Hoodie Allen'];
 
   var favBands =['red hot chilli peppers', 'kenny chesney'];
@@ -89,7 +88,6 @@ document.getElementById('clickMe').addEventListener('click', function(){
         if(favBands[a] === manyAnswers.toLowerCase()){
           score++;
           alert('Correct ' + score + '/7!');
-          notTrue = true;
           break loop1;
         }else{
           attemptsLeft--;
