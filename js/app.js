@@ -27,63 +27,63 @@ document.getElementById('clickMe').addEventListener('click', function(){
     question(questions[a]);
   }
 
-//   // new question with Number
-//   var myNumber = Math.random();
-//   myNumber = myNumber * 10;
-//   myNumber = Math.floor(myNumber);
-//   var attemptsLeft = 4;
-//   for(var i = 0; i < 5; i++) {
-//     if(attemptsLeft === 0){
-//       alert('Close the number was ' + myNumber + '.');
-//     }else {
-//       var numberQuestion = prompt('You have ' + attemptsLeft + ' tries to guess my number between 0-10, good luck!');
-//       if(isNaN(parseInt(numberQuestion))){
-//         attemptsLeft--;
-//         alert('Please use a number.');
-//       }else if(Number(numberQuestion) > myNumber){
-//         attemptsLeft--;
-//         alert('Too high');
-//       }else if (Number(numberQuestion) < myNumber){
-//         attemptsLeft--;
-//         alert('Too low');
-//       }else {
-//         correct();
-//         // score ++;
-//         attemptsLeft = 1;
-//         // alert('Correct ' + score + '/7!');
-//         break;
-//       }
-//     }
-//   }
+  // new question with Number
+  function guessNumber(){
+    var myNumber = Math.random();
+    myNumber = myNumber * 10;
+    myNumber = Math.floor(myNumber);
+    var attemptsLeft = 4;
+    for(var i = 0; i < 5; i++) {
+      if(attemptsLeft === 0){
+        alert('Close the number was ' + myNumber + '.');
+      }else {
+        var numberQuestion = prompt('You have ' + attemptsLeft + ' tries to guess my number between 0-10, good luck!');
+        if(isNaN(parseInt(numberQuestion))){
+          attemptsLeft--;
+          alert('Please use a number.');
+        }else if(Number(numberQuestion) > myNumber){
+          attemptsLeft--;
+          alert('Too high');
+        }else if (Number(numberQuestion) < myNumber){
+          attemptsLeft--;
+          alert('Too low');
+        }else {
+          score ++;
+          attemptsLeft = 1;
+          alert('Correct ' + score + '/7!');
+          break;
+        }
+      }
+    }
+  }
 
+  // new question with many answers
+  // fix bug with second loop logic
+  function bandQuestion(){
+    var attempts = 6;
+    var optionBands = [' Red Hot Chilli Peppers', ' Thomas Rhett', ' Old Dominion', ' Kenny Chesney', ' Lil Dicky', ' Luke Combs', ' Chase Rice', ' Taylor Rae Holbrook', ' Kane Brown', ' Hoodie Allen'];
 
-//   // new question with many answers
-//   // fix bug with second loop logic
-//   attemptsLeft = 6;
-//   var optionBands = [' Red Hot Chilli Peppers', ' Thomas Rhett', ' Old Dominion', ' Kenny Chesney', ' Lil Dicky', ' Luke Combs', ' Chase Rice', ' Taylor Rae Holbrook', ' Kane Brown', ' Hoodie Allen'];
-
-//   var favBands =['red hot chilli peppers', 'kenny chesney'];
-//   loop1:
-//   for(var e = 0; e < 7; e++){
-//     if(attemptsLeft === 0){
-//       alert('Almost, my favorite bands were ' + favBands[0] + ' and ' + favBands[1] + '.');
-//       break;
-//     }else{
-//       var manyAnswers = prompt('Can you guess my favorite band? You have ' + attemptsLeft +' tries! Here are your choices:' + optionBands + '.');
-//       // for(var a = 0; a < favBands.length; a++){
-//       if(favBands[0] === manyAnswers.toLowerCase() || favBands[1] === manyAnswers.toLowerCase()){
-//         correct();
-//         // score++;
-//         // alert('Correct ' + score + '/7!');
-//         break loop1;
-//       }else{
-//         attemptsLeft--;
-//         alert('Try again!');
-//       }
-//       // }
-//     }
-//   }
-
+    var favBands =['red hot chilli peppers', 'kenny chesney'];
+    loop1:
+    for(var e = 0; e < 7; e++){
+      if(attempts === 0){
+        alert('Almost, my favorite bands were ' + favBands[0] + ' and ' + favBands[1] + '.');
+        break;
+      }else{
+        var manyAnswers = prompt('Can you guess my favorite band? You have ' + attemptsLeft +' tries! Here are your choices:' + optionBands + '.');
+        // for(var a = 0; a < favBands.length; a++){
+        if(favBands[0] === manyAnswers.toLowerCase() || favBands[1] === manyAnswers.toLowerCase()){
+          score++;
+          alert('Correct ' + score + '/7!');
+          break loop1;
+        }else{
+          attempts--;
+          alert('Try again!');
+        }
+        // }
+      }
+    }
+  }
 
 //   // Question
 //   var questionFive = prompt('Alright ' + userName + ', the final question. Is this a cool website?');
