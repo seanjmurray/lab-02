@@ -11,7 +11,7 @@ document.getElementById('clickMe').addEventListener('click', function(){
   var score = 0;
   // runs correct alert and adds 1 to score
 
-
+  //function for yes/no questions
   function question(questionPrompt){
     var userAnswer = prompt(questionPrompt);
     if (userAnswer[0].toLowerCase() === 'y'){
@@ -21,11 +21,9 @@ document.getElementById('clickMe').addEventListener('click', function(){
       return alert('Wrong, ' + score + '/7');
     }
   }
+  // array for questions
   var questions = ['Is my dog the cutest?', 'Do I have a red motorcycle?', 'Did your name suddenly appear on this site?', 'Do I like to rock climb?'];
 
-  for(var a = 0; a < questions.length; a++){
-    question(questions[a]);
-  }
 
   // new question with Number
   function guessNumber(){
@@ -70,7 +68,7 @@ document.getElementById('clickMe').addEventListener('click', function(){
         alert('Almost, my favorite bands were ' + favBands[0] + ' and ' + favBands[1] + '.');
         break;
       }else{
-        var manyAnswers = prompt('Can you guess my favorite band? You have ' + attemptsLeft +' tries! Here are your choices:' + optionBands + '.');
+        var manyAnswers = prompt('Can you guess my favorite band? You have ' + attempts +' tries! Here are your choices:' + optionBands + '.');
         // for(var a = 0; a < favBands.length; a++){
         if(favBands[0] === manyAnswers.toLowerCase() || favBands[1] === manyAnswers.toLowerCase()){
           score++;
@@ -85,15 +83,23 @@ document.getElementById('clickMe').addEventListener('click', function(){
     }
   }
 
-//   // Question
-//   var questionFive = prompt('Alright ' + userName + ', the final question. Is this a cool website?');
-//   if(questionFive[0].toLowerCase() === 'y'){
-//     score++;
-//     alert('Thank you for taking my quiz ' + userName + ' you scored ' + score + '/7!');
-//   } else {
-//     alert('I\'m sorry you feel that way.' + score + '/7! Thank you for taking my quiz ' + userName + '!');
-//   }
-//   questionOne();
+  // Question
+  function lastQuestion(){
+    var questionFive = prompt('Alright ' + userName + ', the final question. Is this a cool website?');
+    if(questionFive[0].toLowerCase() === 'y'){
+      score++;
+      alert('Thank you for taking my quiz ' + userName + ' you scored ' + score + '/7!');
+    } else {
+      alert('I\'m sorry you feel that way.' + score + '/7! Thank you for taking my quiz ' + userName + '!');
+    }
+  }
+  // questions 1 to 4
+  for(var a = 0; a < questions.length; a++){
+    question(questions[a]);
+  }
+  guessNumber();
+  bandQuestion();
+  lastQuestion();
 });
 
 
