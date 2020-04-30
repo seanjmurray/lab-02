@@ -57,24 +57,30 @@ document.getElementById('clickMe').addEventListener('click', function(){
   myNumber = Math.floor(myNumber);
   var attemptsLeft = 4;
   for(var i = 0; i < 5; i++) {
-    if(attemptsLeft > 0) {
-      var numberQuestion = prompt('You have ' + attemptsLeft + ' tries to guess my number, good luck!');
-      if(numberQuestion < myNumber){
+    if(attemptsLeft === 0){
+      alert('Close the number was ' + myNumber + '.');
+    }else {
+      var numberQuestion = prompt('You have ' + attemptsLeft + ' tries to guess my number between 0-10, good luck!');
+      if(isNaN(parseInt(numberQuestion))){
         attemptsLeft--;
-        alert('Too low');
-      }else if(numberQuestion > myNumber){
+        alert('Please use a number.');
+      }else if(Number(numberQuestion) > myNumber){
         attemptsLeft--;
         alert('Too high');
+      }else if (Number(numberQuestion) < myNumber){
+        attemptsLeft--;
+        alert('Too low');
       }else {
         // correct();
         score ++;
+        attemptsLeft = 1;
         alert('Correct ' + score + '/7!');
         break;
       }
-    } else{
-      alert('Close the number was ' + myNumber + '.');
     }
   }
+
+
   // new question with many answers
   // fix bug with second loop logic
   attemptsLeft = 6;
@@ -82,7 +88,7 @@ document.getElementById('clickMe').addEventListener('click', function(){
 
   var favBands =['red hot chilli peppers', 'kenny chesney'];
   loop1:
-  for(var e = 0; e < 5; e++){
+  for(var e = 0; e < 6; e++){
     if(attemptsLeft > 0){
       var manyAnswers = prompt('Can you guess my favorite band? You have ' + attemptsLeft +' tries! Here are your choices:' + optionBands + '.');
       // for(var a = 0; a < favBands.length; a++){
