@@ -88,8 +88,11 @@ document.getElementById('clickMe').addEventListener('click', function(){
 
   var favBands =['red hot chilli peppers', 'kenny chesney'];
   loop1:
-  for(var e = 0; e < 6; e++){
-    if(attemptsLeft > 0){
+  for(var e = 0; e < 7; e++){
+    if(attemptsLeft === 0){
+      alert('Almost, my favorite bands were ' + favBands[0] + ' and ' + favBands[1] + '.');
+      break;
+    }else{
       var manyAnswers = prompt('Can you guess my favorite band? You have ' + attemptsLeft +' tries! Here are your choices:' + optionBands + '.');
       // for(var a = 0; a < favBands.length; a++){
       if(favBands[0] === manyAnswers.toLowerCase() || favBands[1] === manyAnswers.toLowerCase()){
@@ -101,9 +104,6 @@ document.getElementById('clickMe').addEventListener('click', function(){
         alert('Try again!');
       }
       // }
-    }else{
-      alert('Almost, my favorite bands were ' + favBands[0] + ' and ' + favBands[1] + '.');
-      break;
     }
   }
 
