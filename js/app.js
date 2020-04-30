@@ -76,6 +76,7 @@ document.getElementById('clickMe').addEventListener('click', function(){
     }
   }
   // new question with many answers
+  // fix bug with second loop logic
   attemptsLeft = 6;
   var optionBands = [' Red Hot Chilli Peppers', ' Thomas Rhett', ' Old Dominion', ' Kenny Chesney', ' Lil Dicky', ' Luke Combs', ' Chase Rice', ' Taylor Rae Holbrook', ' Kane Brown', ' Hoodie Allen'];
 
@@ -84,17 +85,16 @@ document.getElementById('clickMe').addEventListener('click', function(){
   for(var e = 0; e < 5; e++){
     if(attemptsLeft > 0){
       var manyAnswers = prompt('Can you guess my favorite band? You have ' + attemptsLeft +' tries! Here are your choices:' + optionBands + '.');
-      for(var a = 0; a < favBands.length; a++){
-        if(favBands[a] === manyAnswers.toLowerCase()){
-          score++;
-          alert('Correct ' + score + '/7!');
-          break loop1;
-        }else{
-          attemptsLeft--;
-          alert('Try again!');
-          break;
-        }
+      // for(var a = 0; a < favBands.length; a++){
+      if(favBands[0] === manyAnswers.toLowerCase() || favBands[1] === manyAnswers.toLowerCase()){
+        score++;
+        alert('Correct ' + score + '/7!');
+        break loop1;
+      }else{
+        attemptsLeft--;
+        alert('Try again!');
       }
+      // }
     }else{
       alert('Almost, my favorite bands were ' + favBands[0] + ' and ' + favBands[1] + '.');
       break;
@@ -111,3 +111,5 @@ document.getElementById('clickMe').addEventListener('click', function(){
     alert('I\'m sorry you feel that way.' + score + '/7! Thank you for taking my quiz ' + userName + '!');
   }
 });
+
+
