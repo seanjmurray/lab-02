@@ -4,6 +4,13 @@
 // on load user is asked for their name, name inserted into H1
 var userName = prompt('Hi, what is your name?');
 document.getElementById('userName').innerHTML = userName;
+// adds listener to window for scroll percentage
+window.onscroll = function() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById('bar').style.width = scrolled + '%';
+};
 
 // When user clicks button quiz is started
 document.getElementById('clickMe').addEventListener('click', function(){
