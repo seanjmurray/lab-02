@@ -1,6 +1,6 @@
 # lab-02
 
 ## To Do:
-- [ ] Fix logic in band question
+- [x] Fix logic in band question
 - [x] refactor functions
 - [x] add y/n questions to large array

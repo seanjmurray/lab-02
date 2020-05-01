@@ -3,9 +3,7 @@
   <head>
     <!-- Sets window to width of browser  -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>About Me</title>
-
     <!-- Google fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
     <!-- Font awesome -->
@@ -14,7 +12,18 @@
    <link rel="stylesheet" href="css/reset.css">
    <link rel="stylesheet" href="css/style.css">
   </head>
-  <body>
+  <script>
+  function myGradient(e){
+    var windowWidth = window.innerWidth;
+    var windowHeight = window.innerHeight;
+    var mouseX = Math.round(event.clientX / windowWidth * 100);
+    var mouseY = Math.round(event.clientY / windowHeight * 100);
+    document.getElementById('gradient').style.backgroundImage = "radial-gradient( circle  at "+ mouseX + '% ' + mouseY + '%, #222222, #111111';
+  };
+  </script>
+  <body onmousemove="myGradient(event)" id="gradient">
+    
+    <!-- Progress indicator thing -->
     <div class="header">
       <div class="progress">
         <div id="bar"></div>
@@ -94,7 +103,7 @@
       </div>
     </main>
     <footer>
-      <p>Sean Murray 2020</p>
+      <p>&copy; Sean Murray 2020</p>
     </footer>
 
 

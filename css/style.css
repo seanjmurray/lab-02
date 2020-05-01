@@ -1,6 +1,5 @@
 /* GLOBAL STYLES */
 html {
-  background-color: #222222;
   color: #eeeeee;
   font-family: Montserrat, sans-serif;
   font-weight: 400;
@@ -23,7 +22,9 @@ h2 {
 h3 {
   font-size: 1.5em;
 }
-
+#gradient {
+  background-image: radial-gradient(at center, #222222, #eee);
+}
 /* Flex */
 
 .container {
