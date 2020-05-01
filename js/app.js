@@ -11,13 +11,10 @@ window.onscroll = function() {
   var scrolled = (winScroll / height) * 100;
   document.getElementById('bar').style.width = scrolled + '%';
 };
-
 // When user clicks button quiz is started
 document.getElementById('clickMe').addEventListener('click', function(){
   // User score
   var score = 0;
-  // runs correct alert and adds 1 to score
-
   //function for yes/no questions
   function question(questionPrompt){
     var userAnswer = prompt(questionPrompt);
@@ -30,8 +27,6 @@ document.getElementById('clickMe').addEventListener('click', function(){
   }
   // array for questions
   var questions = ['Is my dog the cutest?', 'Do I have a red motorcycle?', 'Did your name suddenly appear on this site?', 'Do I like to rock climb?'];
-
-
   // new question with Number
   function guessNumber(){
     var myNumber = Math.random();
@@ -61,35 +56,36 @@ document.getElementById('clickMe').addEventListener('click', function(){
       }
     }
   }
-
   // new question with many answers
-  // fix bug with second loop logic
   function bandQuestion(){
     var attempts = 6;
     var optionBands = [' Red Hot Chilli Peppers', ' Thomas Rhett', ' Old Dominion', ' Kenny Chesney', ' Lil Dicky', ' Luke Combs', ' Chase Rice', ' Taylor Rae Holbrook', ' Kane Brown', ' Hoodie Allen'];
-
     var favBands =['red hot chilli peppers', 'kenny chesney'];
-    loop1:
-    for(var e = 0; e < 7; e++){
-      if(attempts === 0){
-        alert('Almost, my favorite bands were ' + favBands[0] + ' and ' + favBands[1] + '.');
-        break;
-      }else{
-        var manyAnswers = prompt('Can you guess my favorite band? You have ' + attempts +' tries! Here are your choices:' + optionBands + '.');
-        // for(var a = 0; a < favBands.length; a++){
-        if(favBands[0] === manyAnswers.toLowerCase() || favBands[1] === manyAnswers.toLowerCase()){
-          score++;
-          alert('Correct ' + score + '/7!');
-          break loop1;
-        }else{
-          attempts--;
-          alert('Try again!');
+    var notTrue = false;
+
+    function bandCheck(){
+      if(favBands.indexOf(bandPrompt) === -1){
+        attempts--;
+        alert('Try again');
+      }else {
+        score++;
+        alert('Correct! ' + score + '/7!');
+        attempts = 1;
+        return notTrue = true;
+      }
+    }
+    for(var i = attempts; i >= 0; i--){
+      if(i > 0){
+        if(!notTrue){
+          var bandPrompt = (prompt('Can you guess my favorite band? You have ' + attempts +' attempt(s) left. Here are your choices:' + optionBands + '.')).toLowerCase();
+          bandPrompt;
+          bandCheck();
         }
-        // }
+      }else if(i === 0 && !notTrue){
+        alert('Almost! My favorite bands were '+ favBands[0] + ' and ' + favBands[1] + '.');
       }
     }
   }
-
   // Question
   function lastQuestion(){
     var questionFive = prompt('Alright ' + userName + ', the final question. Is this a cool website?');
