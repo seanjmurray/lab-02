@@ -23,7 +23,7 @@ h3 {
   font-size: 1.5em;
 }
 #gradient {
-  background-image: radial-gradient(at center, #222222, #eee);
+  background-image: radial-gradient(at center, #222222, #111111);
 }
 /* Flex */
 
